@@ -1,45 +1,36 @@
 <html>
-
-<head>
-
-	<script language="javascript">
-	
-		function showCheckbox() {
+	<head>
+		<script language="javascript">
 		
-			var checkboxElement = document.getElementById('test_checkbox');
+			function showCheckbox() {
+			
+				var checkboxElement = document.getElementById('test_checkbox');
 
-			if (checkboxElement == null) {
-				var checkbox = document.createElement('input');
-				checkbox.setAttribute('type', 'checkbox');
-				checkbox.setAttribute('id', 'test_checkbox');
-				checkbox.setAttribute('style', "margin-top: 25px");
-				checkbox.checked = true;
-				document.getElementById('checkbox_div').appendChild(checkbox);
-				document.getElementById('checkbox_div').style.display = 'block';
-				document.getElementById('toggleButton').style.display = 'inline-block';
+				if (checkboxElement == null) {
+					var checkbox = document.createElement('input');
+					checkbox.setAttribute('type', 'checkbox');
+					checkbox.setAttribute('id', 'test_checkbox');
+					checkbox.setAttribute('style', "margin-top: 25px");
+					checkbox.checked = true;
+					document.getElementById('checkbox_div').appendChild(checkbox);
+					document.getElementById('checkbox_div').style.display = 'block';
+					document.getElementById('toggleButton').style.display = 'inline-block';
+				}
 			}
-		}
+			
+			function toggleCheckbox() {
+			
+				var val = document.getElementById('test_checkbox').checked;
+				document.getElementById('test_checkbox').checked = !val;
+			}
 		
-		function toggleCheckbox() {
-		
-			var val = document.getElementById('test_checkbox').checked;
-			document.getElementById('test_checkbox').checked = !val;
-		}
-	
-	</script>
-
-</head>
-
-
-<body>
-
-	<input type="button" value="Show Checkbox" onclick="showCheckbox()"/>
-	<input type="button" id="toggleButton" style="display: none" value="Toggle" onclick="toggleCheckbox()"/>
-	<div id="checkbox_div" style="display:none">
-		<span>Checkbox: </span>
-	</div>
-
-</body>
-
-
+		</script>
+	</head>
+	<body>
+		<input type="button" value="Show Checkbox" onclick="showCheckbox()"/>
+		<input type="button" id="toggleButton" style="display: none" value="Toggle" onclick="toggleCheckbox()"/>
+		<div id="checkbox_div" style="display:none">
+			<span>Checkbox: </span>
+		</div>
+	</body>
 </html>
